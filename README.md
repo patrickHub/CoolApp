@@ -1,14 +1,14 @@
 Angular2 CoolApp
 ==========================
 
-> An Angular 2 interactive poll app using [Angular 2](https://angular.io/), [Node](https://nodejs.org/), [socket.io](http://socket.io/), [Express](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [TypeScript](http://www.typescriptlang.org/), [D3]( https://d3js.org/), Services, Injectables, Forms, Routing & Navigation [by Patrick Deslé Djomo](https://github.com/patrickHub).
+> An Angular 2 interactive poll app using [Angular 2](https://angular.io/), [Node](https://nodejs.org/), [socket.io](http://socket.io/), [Express](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [Chai.js](http://chaijs.com/), [Passport.js](http://passportjs.org/), [Json Web token](https://jwt.io/), [TypeScript](http://www.typescriptlang.org/), [D3]( https://d3js.org/), Services, Injectables, Forms, Routing & Navigation [by Patrick Deslé Djomo](https://github.com/patrickHub).
 
 This repos shows an interactive poll application using Socket.io, Node, Mongo, D3, and Angular 2. The goal is to implement a REST API with express and mongoose, and also an angular 2 application that will use socket.io to interact in real time with the REST API server.
 It also contains features:
 
-* Secure-REST-API-with-Automate-tests using JWT and Chai.js
+* Secure-REST-API-with-Automate-tests using JWT, Chai.js and Passport.js
 * Use of injectables, forms, routing & navigation services in Angular 2 
-* Use D3 an angular 2 app to manipulate documents based on data
+* Use D3 angular 2 app to manipulate documents based on data
 * And much more
 
 
