@@ -30,7 +30,7 @@ run mongo database
 docker-compose up --build
 
 # change into the repo directory
-cd ..
+cd ../server
 # install preriquisites for server
 npm install
 
@@ -38,12 +38,21 @@ npm install
 grunt
 
 # change into the angular app directory
-cd admin
+cd ../admin
 
 # install preriquisites for angular2 app
 npm install
 
-# run the angular 2 app
+# run the admin angular 2 app
+npm start
+
+# change into the angular app directory
+cd ../student
+
+# install preriquisites for angular2 app
+npm install
+
+# run the student angular 2 app
 npm start
 ```
 
