@@ -80,7 +80,7 @@ There are 6 components in angular app:
 </p>
 
 
-## License
+## Langing page
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+You can visit the project [langing page](https://patrickhub.github.io/CoolApp/) for more details.
 
