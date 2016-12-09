@@ -14,8 +14,8 @@ It also contains features:
 
 ### Prerequisites
 
-First of all you need to download and install Docker machine or Docker toolbox in order to run the data base on your operating system.
-[download and install](https://docs.docker.com/engine/installation/).
+First of all you need to [download and install](https://docs.docker.com/engine/installation/) Docker machine or Docker toolbox in order to run the data base on your operating system.
+
 
 ## Quick start
 
