@@ -1,0 +1,17 @@
+version: '2'
+services:
+  coolapp_mongo:
+    build: images/coolapp_mongo
+    image: coolapp_mongo
+    container_name: "coolapp_mongo"
+    ports:
+      - "27017:27017"
+
+  coolapp_mongo_seed:
+    build: images/coolapp_mongo_seed
+    image: coolapp_mongo_seed
+    container_name: "coolapp_mongo_seed"
+    links:
+      - coolapp_mongo
+    depends_on:
+      - coolapp_mongo
