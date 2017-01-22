@@ -10,11 +10,10 @@ module.exports = function (app){
 }
 
 router.post('/', function(req, res, next){
-   // var newUser = new User(res.body);
     var saltRounds = 10;
-    
     if(req.body.password === undefined ||req.body.password.length < 8){
         console.log(req.body.password);
+         console.log("REGISTER");
         return next({status: 422, message: "Password is mandatory and must be at least 8 characters long"});
     }
 
@@ -23,6 +22,9 @@ router.post('/', function(req, res, next){
             return next(err);
         }
         
+        console.log( "lastName: " + req.body.lastName);
+        console.log( "firstName: " + req.body.firstName);
+
         var newUser = new User(req.body);
         newUser.password = hash;
         newUser.save(function(err, doc, n){
@@ -31,13 +33,17 @@ router.post('/', function(req, res, next){
                 if(err.name === "ValidationError"){
                     return next({status: 422, message: "Invalid user data"});
                 }else if(err.name === "MongoError" && err.message.startsWith("E11000 duplicate key")){
-                    return next({status: 422, message: "Username is not available"});
+                    return next({status: 422, message: "Username is already available"});
                 }else{
                     return next(err);
                 }
             }
-            return res.status(201).location('/users/' + newUser._id).end();
+            return res.status(201).set('Access-Control-Expose-Headers', 'Location').location('/users/' + newUser._id).end();
         });
     });
 });
 
+  router.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({message: err.message});
+  });

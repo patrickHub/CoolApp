@@ -7,11 +7,11 @@ export const questionRoutes: Routes =[
     {
         path: 'question',
         component: QuestionComponent,
-        children: [
+       /* children: [
             {
                 path: 'new',
                 component: NewQuestionComponent
             }
-        ]
+        ]*/
     }
 ]

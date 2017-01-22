@@ -1,4 +1,5 @@
 import { NgModule }      from '@angular/core';
+import {ModalModule} from "ng2-modal";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -10,14 +11,18 @@ import { AppComponent }  from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
-import { PoolComponent } from './pool/pool.component';
 import { QuestionComponent } from './question/question.component';
-import { NewQuestionComponent } from './question/new-question/new-question.component';
-import { PublishQuestionComponent } from './publish-question/publish-question.component';
+import { ResultComponent } from './result/result.component';
+import { AlertComponent } from './alert/alert.component';
 import {routing} from './app.Routing';
 
 import {EqualPasswordsValidator} from './services/validators/equalPassword.Validator.service';
 import {EmailValidator} from './services/validators/email.validator.service';
+import {ApiService} from './services/api.service/api.service';
+import {AlertService} from './services/alert.service/alert.service';
+import {AuthService} from './services/auth.service/auth.service';
+import { AuthGuard } from './services/authGuard.service/authGuard.service';
+
 
 @NgModule({
    imports: [
@@ -25,19 +30,19 @@ import {EmailValidator} from './services/validators/email.validator.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
+    ModalModule
   ],
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     AuthComponent,
-    PoolComponent,
    QuestionComponent,
-   NewQuestionComponent,
-   PublishQuestionComponent
+   ResultComponent,
+   AlertComponent
   ],
-  providers: [EqualPasswordsValidator, EmailValidator],
+  providers: [EqualPasswordsValidator, EmailValidator, AlertService, ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
   //directives: [ROUTER_DIRECTIVES]
 })

@@ -1,0 +1,100 @@
+
+
+<div class="container-fluid" style = "width: 100%;padding-right: 0%;padding-left: 0%;margin-right: 0%;margin-left: 0%; background-color: #4285F4!important;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="background-color: #c01511;margin-left: 4%;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="float: left; padding-top: 0.8rem; padding-bottom: 0.25rem; margin-right: 1rem; margin-left: 3%;
+                                              font-size: 2.25rem; line-height: inherit; color: white;">CoolApp</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: rgba(0, 0, 0, 0);
+            border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px; box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.878431);cursor: pointer; display: block;font-family: Roboto, sans-serif;font-size: 15px;font-weight: 300; height: 35.15px;
+            line-height: 22.5px;list-style-image: none;list-style-position: outside;list-style-type: none;outline-width: 0px;overflow-x: hidden;overflow-y: hidden;
+            padding-bottom: 6.375px; padding-left: 8px;padding-right: 8px;padding-top: 6.375px;position: relative;text-align: left;text-decoration: none;
+            text-size-adjust: 100%;touch-action: manipulation;transition-delay: 0s;transition-duration: 0.35s;transition-property: all;transition-timing-function: ease;user-select: none;width: 56.0625px;z-index: 1;" 
+          >Profile <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLinl="#" (click)="signOut()" >Sign-out</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
+
+<div class="homepage-banner bg-info" role="" style="height: 300px;background-color: #0143A3">
+	<div class="container text-center">
+		<div id="text-2" class="widget widget_text">			
+            <div class="textwidget">
+                <h1 style="font-size: 46px;font-weight:100;color: #B3D8FD!important;">CoolApp Student</h1>
+                <h1><p class="lead" style="font-size: 32px;font-weight:100;color: #B3D8FD!important;">An Interactive questions-Answers  for students</p>
+                     <a href="/themes/" class="btn btn-default btn-lg" style="color: #1976d2; border-color:#1976d2 ">Try CoolApp Teacher</a>
+                </h1>
+           </div>
+           <div class="panel-body" style="width: 100%;margin-left: 10%;height: 286px;margin-top: -22px;background-image:url(app/result/img/banner-small.jpg);">
+                <select *ngIf="polls.length" [ngModel]="selectedPoll" (ngModelChange)="onChangePoll($event)" class="form-control" name="size" style="margin-left: 200px; margin-right: 574px;width: 300px;margin-top: 20px;">
+                    <option *ngIf="polls.length" value="">Choose a poll</option>
+                    <option *ngFor="let poll of polls" [value]="poll._id">{{poll.title}}</option>         
+                </select>
+                
+                <select  *ngIf="selectedPoll" [ngModel]="selectedQuestionId" (ngModelChange)="onChangeQuestion($event)"  class="form-control" name="size" style="margin-left: 550px; margin-right: 574px;width: 300px;margin-top: -34px;">
+                    <option *ngIf="!questions.length" value="" >No question available for this poll</option>
+                    <option *ngIf="questions.length" value="">Choose a question for this poll</option>    
+                    <option *ngFor="let question of questions" [value]="question._id">{{question.description}}</option>         
+                </select>
+            </div>
+        </div>
+   </div>
+</div>
+
+<div *ngIf="!polls.length" class="container text-center">
+    <h2 class="gray" style="font-size: 32px; font-weight: 300;">There is neither poll available nor question to answer</h2>
+    <p class="lead">Plesase ask you teacher to create Polls and question or you can log as a teacher and create questions <a>here</a></p>
+</div>
+
+<div class="container text-center">
+    <nav class="navbar navbar-default" style="/*margin-left: 23%;margin-right: 3%;*/margin-top: 28px;height: 90%;padding-top: 25px;padding-left: 2%;padding-right: 5%;background-color: white;">
+        
+        <div class="textwidget">
+            <span class="qa-marker q-marker" style=" color: #c00; font-weight: bold; height: 1em;width: 1em;font-size: 30px;line-height: 35px;margin-left: -24%;">Q:</span>
+            <h1 class="lead" style="margin-left: 6%;margin-top: -29px;">{{currentQuestion.description}}</h1>
+
+            <div>
+                <input type="radio" id="ritemb" name="ritem" value="ropt2">
+                <label for="ritemb">dfxgcgvhjbj</label>
+            </div>
+            <div>
+                <input type="radio" id="ritemb" name="ritem" value="ropt2">
+                <label for="ritemb">dfxgcgvhjbj</label>
+            </div>
+             
+             <ul class="panel-body" style="list-style-type: none;">
+                <li *ngFor="let choice of currentQuestion.choices" class="panel-body" style="cursor: pointer;">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="margin-left: -15%;"></span>
+                    <input name="isAnswer"  type="radio" value="" style="margin-left: 2%;">
+                    {{   choice.title}}    
+                </li>
+            </ul>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="margin-left: -15%;"></span>
+            <input name="isAnswer"  type="radio" value="" style="margin-left: 2%;">
+            <!--<input name="isAnswer" [(ngModel)] = "currentChoice.isAnswer"  #isAnswer type="radio" value="" style="margin-left: 2%;">isAnswer-->
+        </div>
+
+        <button type="button" class="btn btn-primary" style="width: 55%;margin-top: 0px;margin-bottom: 29px;margin-left: 21%;max-width: 60%;">
+                <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Stop poll</button>
+        
+    </nav>
+</div>

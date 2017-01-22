@@ -15,9 +15,14 @@ var models = glob.sync(config.root + '/app/models/*.js');
 models.forEach(function (model) {
   require(model);
 });
-
+var cors = require('cors-express');
 // var bodyParser = require('body-parser');
 var app = express();
+// use it before all route definitions
+app.use(cors({
+  origin: '*',
+  exposedHeaders: ['Content-Type', 'Location']
+}));
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var realtime = require('./app/realtime/realtime.js');

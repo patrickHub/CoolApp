@@ -35,11 +35,15 @@ function realtimeService(){
     function notifyQuestion(question){
         socketio.sockets.in(question.room).emit('msg_newquestion', {question: question});
     }
+    function notifyPoll(poll){
+        socketio.sockets.in(poll).emit('msg_newpoll', {poll: poll});
+    }
 
     return{
         setup: setup,
         notifyAnswer: notifyAnswer,
-        notifyQuestion: notifyQuestion
+        notifyQuestion: notifyQuestion,
+        notifyPoll: notifyPoll
     }
 }
 

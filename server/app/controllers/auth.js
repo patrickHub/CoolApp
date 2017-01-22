@@ -49,3 +49,8 @@ router.post('/', function(req, res, next){
         return next({status: 401, message: error.message});
     });
 });
+
+router.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({message: err.message});
+  });

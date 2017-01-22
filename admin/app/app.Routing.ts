@@ -6,11 +6,12 @@ import { loginRoutes } from './login/login.routing'
 import { registerRoutes }    from './register/register.Routing';
 import { authRoutes } from './auth/auth.routing';
 
+
 // Route Configuration
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/auth',
     pathMatch: 'full'
   },
     // Add register routes form a different file

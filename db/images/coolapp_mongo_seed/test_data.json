@@ -1,7 +1,7 @@
-    {
-		"firstName": "John",
-		"lastName": "Doe",
-		"email": "john.doe@gmail.com",
-		"username": "john",
-		"password": "sooo secret"
-	}
+{
+ 	"firstName": "John",
+	"lastName": "Doe",
+	"email": "john.doe@gmail.com",
+	"username": "john",
+	"password": "sooo secret"
+}

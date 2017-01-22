@@ -8,9 +8,9 @@ var config = {
     app: {
       name: 'secure-rest-api-with-automated-tests'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3030,
     db: 'mongodb://localhost:27017/project-final-tests-development',
-    socketIoUrl: 'http://localhost:3000',
+    socketIoUrl: 'http://localhost:3030',
     jwtsecret: process.env.JWTSECRET || 'supersecretsharedkey'
   },
 
@@ -19,7 +19,7 @@ var config = {
     app: {
       name: 'secure-rest-api-with-automated-tests'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3030,
     db: 'mongodb://localhost:27017/project-final-test',
     jwtsecret: process.env.JWTSECRET || 'supersecretsharedkey'
   },
@@ -29,7 +29,7 @@ var config = {
     app: {
       name: 'secure-rest-api-with-automated-tests'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3030,
     db: 'mongodb://localhost:21017/project-final-production',
     jwtsecret: process.env.JWTSECRET || 'supersecretsharedkey'
   }
