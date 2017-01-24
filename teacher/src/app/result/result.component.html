@@ -1,0 +1,35 @@
+
+
+<div class="panel-body" style="width: 100%;margin-left: 10%;height: 286px;margin-top: -22px;background-image:url(app/result/img/banner-small.jpg);">
+    <select [ngModel]="selectedPoll" (ngModelChange)="onChangePoll($event)" class="form-control" name="size" style="margin-left: 200px; margin-right: 574px;width: 300px;margin-top: 20px;">
+        <option *ngIf="!polls.length" value="">no poll available</option>
+        <option *ngIf="polls.length" value="">Choose a poll</option>
+        <option *ngFor="let poll of polls" [value]="poll._id">{{poll.title}}</option>         
+    </select>
+    
+    <select  *ngIf="selectedPoll" [ngModel]="selectedQuestionId" (ngModelChange)="onChangeQuestion($event)"  class="form-control" name="size" style="margin-left: 550px; margin-right: 574px;width: 300px;margin-top: -34px;">
+        <option *ngIf="!questions.length" value="" >No question available for this poll</option>
+        <option *ngIf="questions.length" value="">Choose a question for this poll</option>    
+        <option *ngFor="let question of questions" [value]="question._id">{{question.description}}</option>         
+    </select>
+</div>
+
+<nav class="navbar navbar-default" style="margin-left: 23%;margin-right: 3%;margin-top: 28px;height: 90%;padding-top: 25px;padding-left: 2%;padding-right: 5%;background-color: white;">
+    <div *ngFor="let stat  of statistics.choicesAnswers">
+        <h4>{{getTitle(stat.choice)}}</h4>
+        <div class="progress" style=" margin-left: 15%; margin-top: -29px;">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" 
+                 [ngStyle]="{'min-width': '2em', 'width':getPercentage(stat.totalAnswers) + '%'}">
+                {{getPercentage(stat.totalAnswers) }}%
+            </div>
+        </div>
+    </div>
+
+
+    <button *ngIf="totalUsers.totalUsers" type="button" class="btn btn-info btn-circle btn-xl" style="width: 188px; height: 110px;padding: 10px 16px;font-size: 29px; border-radius: 
+        66px;margin-left: 40%;margin-bottom: 3%;"> <span class="badge" style="font-size: 16px;font-weight: bold;">{{totalUsers.totalUsers}}  connected users</span>
+    </button>
+    <button type="button" class="btn btn-primary" style="width: 55%;margin-top: 0px;margin-bottom: 29px;margin-left: 21%;max-width: 60%;">
+            <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Stop poll</button>
+
+</nav>

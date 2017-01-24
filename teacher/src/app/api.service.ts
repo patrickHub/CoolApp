@@ -44,13 +44,18 @@ export class ApiService {
       .toPromise()
   }
 
+  create(user: any) {
+        return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
+  }
+
     // private helper methods
 
-  currentUser() {
+  jwt() {
         // create authorization header with jwt token
-        let student = JSON.parse(localStorage.getItem('student'));
-        if (student) {
-          return student;
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        console.log("Token : " + currentUser);
+        if (currentUser) {
+          return currentUser;
         }
     }
   constructor(private http: Http) { }

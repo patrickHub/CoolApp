@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid" style = "width: 100%;padding-right: 0%;padding-left: 0%;margin-right: 0%;margin-left: 0%; background-color: #4285F4!important;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="background-color: #c01511;margin-left: 4%;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="float: left; padding-top: 0.8rem; padding-bottom: 0.25rem; margin-right: 1rem; margin-left: 3%;
+                                              font-size: 2.25rem; line-height: inherit; color: white;">CoolApp</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: rgba(0, 0, 0, 0);
+            border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px; box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.878431);cursor: pointer; display: block;font-family: Roboto, sans-serif;font-size: 15px;font-weight: 300; height: 35.15px;
+            line-height: 22.5px;list-style-image: none;list-style-position: outside;list-style-type: none;outline-width: 0px;overflow-x: hidden;overflow-y: hidden;
+            padding-bottom: 6.375px; padding-left: 8px;padding-right: 8px;padding-top: 6.375px;position: relative;text-align: left;text-decoration: none;
+            text-size-adjust: 100%;touch-action: manipulation;transition-delay: 0s;transition-duration: 0.35s;transition-property: all;transition-timing-function: ease;user-select: none;width: 56.0625px;z-index: 1;" 
+          >Profile <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLinl="#" (click)="signOut()" >Sign-out</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
+
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style= "background: linear-gradient(135deg,#000 0,#3f729b 100%);">
+            <ul class="sidebar-nav">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-338">
+                    <a [routerLinkActive]="['active']" class="collapsible-header waves-effect" routerLink="question" style="margin-top: 50px;padding-left: 60px;">Questions</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                 <li  class="collapsible-header waves-effect">
+                    <a [routerLinkActive]="['active']" routerLink="result" style="margin-top: 4px;padding-left: 65px;">Results</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+</nav>
+<router-outlet></router-outlet>
