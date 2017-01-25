@@ -18,7 +18,7 @@ import {ApiService} from './api.service';
 import {AlertService} from './alert.service';
 import {AuthService} from './auth.service';
 import{ SocketService } from './socket.service'
-import { AuthGuardService } from './auth-Guard.service';
+import { AuthGuardService } from './auth-guard.service';
 import {ModalModule} from "ng2-modal";
 
 @NgModule({
