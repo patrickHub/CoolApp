@@ -1,9 +1,9 @@
-import { Routes } from '@angular/Router';
+import { Routes } from '@angular/router';
 
 import{ AuthComponent } from './auth.component';
 import { QuestionComponent } from '../question/question.component';
 import { ResultComponent } from '../result/result.component'
-import { AuthGuardService } from '../auth-Guard.service';
+import { AuthGuardService } from '../auth-guard.service';
 
 export const authRoutes: Routes = [
     {
