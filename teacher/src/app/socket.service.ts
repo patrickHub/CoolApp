@@ -16,7 +16,7 @@ export class SocketService implements OnInit{
         this.socket = io('https://coolappserver.herokuapp.com');
         console.log("New connection is made");
         this.socket.on('msg_newstudent', function(student){
-            console.log("New student : " +  student.fullName);
+            console.log("New student fullName : " +  student.fullName);
             this.numbers = this.numbers + 1;
             console.log("number: " + this.numbers);
            this.totalUsers.next({totalUsers: this.numbers});
