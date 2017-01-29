@@ -3,12 +3,11 @@ Angular2 CoolApp
 
 > An Angular 2 interactive poll app using [Angular 2](https://angular.io/), [Node](https://nodejs.org/), [socket.io](http://socket.io/), [Express](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [Chai.js](http://chaijs.com/), [Passport.js](http://passportjs.org/), [Json Web token](https://jwt.io/), [TypeScript](http://www.typescriptlang.org/), [D3]( https://d3js.org/), Services, Injectables, Forms, Routing & Navigation [by Patrick Deslé Djomo](https://github.com/patrickHub).
 
-This repos shows an interactive poll application using Socket.io, Node, Mongo, D3, and Angular 2. The goal is to implement a REST API with express and mongoose, and also an angular 2 application that will use socket.io to interact in real time with the REST API server.
+This repos shows an interactive poll application using Socket.io, Node, Mongo and Angular 2. The goal is to implement a REST API with express and mongoose, and also an angular 2 application that will use socket.io to interact in real time with the REST API server.
 It also contains features:
 
 * Secure-REST-API-with-Automate-tests using JWT, Chai.js and Passport.js
 * Use of injectables, forms, routing & navigation services in Angular 2 
-* Use D3 angular 2 app to manipulate documents based on data
 * And much more
 
 
@@ -56,11 +55,11 @@ npm install
 npm start
 ```
 
-Then visit [http://localhost:3000](http://localhost:3000) in your browser. 
+Then visit [http://localhost:3000](http://localhost:4200) in your browser. 
 
 ## Architecture
 
-There are 6 components in angular app:
+There are 3 components in angular app:
 
 * [`Register`](admin/app/register/register.component.ts) - for register page that allow teachers to register them selves
 <p align="center">
@@ -73,19 +72,23 @@ There are 6 components in angular app:
   <img src="/public/img/login.page.PNG" alt="Angular 2 D3 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
 </p>
 
-* [`auth and pool`](admin/app/auth/auth.component.ts) - for the authenticate page that allow authicates teachers to get into the admin interface, to add and list the availables polls
-<p align="center">
-  <img src="/public/img/auth.page.PNG" alt="Angular 2 D3 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
-</p>
-
 * [`question`](admin/app/question/question.component.ts) - for the question page that allow authenticate teachers select a poll , add new question with its differents choices and publish to students
 <p align="center">
   <img src="/public/img/question.page.PNG" alt="Angular 2 D3 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
 </p>
 
+* [`pool`](admin/app/question/question.component.ts) - for the authenticate page that allow authicates teachers to get into the admin interface, to add and list the availables polls
+<p align="center">
+  <img src="/public/img/auth.page.PNG" alt="Angular 2 D3 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
+</p>
+
 * [`result`](admin/app/publish-question/publish-question.component.ts) - for the result page that allow authenticate teachers to see the the answers from students and to see the graph that shows the results statistics
 <p align="center">
-  <img src="/public/img/result.page.PNG" alt="Angular 2 D3 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
+  <img src="/public/img/result.page.PNG" alt="Angular 2 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
+</p>
+* [`student`](student/src/app/question/question.component.ts) - for the student page that allow authenticate user to select poll and answer its questions
+<p align="center">
+  <img src="/public/img/question.student.PNG" alt="Angular 2 Node Express Socket.io Chai.js JWT Passport " width="600" height="360"/>
 </p>
 
 
